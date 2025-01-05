@@ -103,7 +103,7 @@ gr_interface = gr.Interface(
 
 @app.get("/")
 def root():
-    gr_interface.launch(share=True)
+    gr_interface.launch(server_name="0.0.0.0", server_port=8000, share=False)
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
